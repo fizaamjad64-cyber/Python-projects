@@ -1,0 +1,31 @@
+# Simple Number Guessing Game
+# Author: Your Name
+# Description: A beginner-friendly Python game where the player guesses a number.
+
+import random  # Import the random library to generate random numbers
+
+# Generate a random number between 1 and 20
+number_to_guess = random.randint(1, 20)
+
+# Give the player 5 attempts
+attempts = 5
+
+print("Welcome to the Number Guessing Game!")
+print("I am thinking of a number between 1 and 20.")
+print(f"You have {attempts} attempts to guess it.\n")
+
+# Loop through the attempts
+for attempt in range(1, attempts + 1):
+    guess = int(input(f"Attempt {attempt}: Enter your guess: "))
+
+    if guess == number_to_guess:
+        print(f"🎉 Congratulations! You guessed the number {number_to_guess} correctly!")
+        break
+    elif guess < number_to_guess:
+        print("Too low! Try a higher number.\n")
+    else:
+        print("Too high! Try a lower number.\n")
+
+# If the player did not guess correctly
+if guess != number_to_guess:
+    print(f"😞 Sorry! The number I was thinking of was {number_to_guess}.")
